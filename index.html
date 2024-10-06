@@ -4,6 +4,22 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Hangman</title>
+        <link rel="stylesheet" href="styles.css" />
+        <script type="module" src="script.js" defer></script>
     </head>
-    <body></body>
+    <body>
+        <div id="container">
+            <h3>Please select an option</h3>
+            <div id="category-container"></div>
+            <div id="alphabet-container"></div>
+            <div id="hidden-word"></div>
+            <canvas id="canvas"></canvas>
+            <div class="new-game-popup"></div>
+            <div id="result-container">
+                <h2></h2>
+                <p></p>
+            </div>
+            <button id="new-game-popup">New Game</button>
+        </div>
+    </body>
 </html>
