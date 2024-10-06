@@ -12,7 +12,7 @@ import { categories, alphabetLetters } from "./words.js";
 const categoryContainer = document.getElementById("category-container");
 const hiddenWord = document.getElementById("hidden-word");
 const alphabetContainer = document.getElementById("alphabet-container");
-const newGamePopup = document.getElementById(".new-game-popup");
+const newGamePopup = document.querySelector(".new-game-popup");
 const newGameButton = document.getElementById("new-game-button");
 
 let chosenWord;
@@ -75,8 +75,8 @@ const selectLetter = (e) => {
     const selectedLetter = e.target.textContent;
     const chosenWordArray = chosenWord.toLowerCase().split("");
     if (chosenWordArray.includes(selectedLetter.toLowerCase())) {
-        revealLetter(chosenWordArray, selectLetter.toLowerCase());
-        if (chosenWordArray.length === letterGuessed) {
+        revealLetter(chosenWordArray, selectedLetter.toLowerCase());
+        if (chosenWordArray.length === lettersGuessed) {
             displayResult(true);
         }
     } else {
@@ -94,7 +94,7 @@ const revealLetter = (chosenWordArray, selectedLetter) => {
     chosenWordArray.forEach((letter, index) => {
         if (selectedLetter === letter) {
             dashes[index].textContent = selectedLetter;
-            letterGuessed++;
+            lettersGuessed++;
         }
     });
 };
